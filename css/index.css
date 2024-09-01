@@ -1,0 +1,9 @@
+:root {
+    --main-bg-color: #36393e;
+    --form-bg-color: #282b30;
+}
+
+
+body {
+    background: var(--main-bg-color) !important;
+}
