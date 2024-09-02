@@ -176,7 +176,10 @@ function validateParameters(gender, age, heightFeet, heightInches, currentWeight
 
 
 
-
+/* 
+ *
+ * 
+*/
 function calculateWeightData(gender, age, heightFeet, heightInches, currentWeight, goalWeight, activityLevel)
 {
   const heightCm = (heightFeet * 30.48) + (heightInches * 2.54); // convert to cm
