@@ -208,16 +208,19 @@ function calculateBMR(gender, w, h, a)
 
 function calculateSurplusData(gender, age, heightCm, currentWeight, goalWeight, activityLevel)
 {
-  console.log("hi");
   let weightData = [];
   const goalBMR = calculateBMR(gender, goalWeight, heightCm, age);
   const goalTDEE = goalBMR * activityLevel;
+  const currentBMR = calculateBMR(gender, currentWeight, heightCm, age);
+  const currentTDEE = currentBMR * activityLevel;
 
   // record goal statistics
   weightData.push(
     {
       goalBMR: goalBMR,
-      goalTDEE: goalTDEE
+      goalTDEE: goalTDEE,
+      currentBMR: currentBMR,
+      currentTDEE: currentTDEE
     }
   );
 
@@ -258,12 +261,16 @@ function calculateDeficitData(gender, age, heightCm, currentWeight, goalWeight, 
   let weightData = [];
   const goalBMR = calculateBMR(gender, goalWeight, heightCm, age);
   const goalTDEE = goalBMR * activityLevel;
+  const currentBMR_ = calculateBMR(gender, currentWeight, heightCm, age);
+  const currentTDEE_ = currentBMR_ * activityLevel;
 
   // record goal statistics
   weightData.push(
     {
       goalBMR: goalBMR,
-      goalTDEE: goalTDEE
+      goalTDEE: goalTDEE,
+      currentBMR: currentBMR_,
+      currentTDEE: currentTDEE_
     }
   );
 
@@ -397,6 +404,14 @@ function displayDataDetails(weightData)
 {
   const detailsButton = document.getElementById('detailsButton');
   const tableBody = document.getElementById('dataTableBody');
+
+  const goalBMR = document.getElementById('goalBMR');
+  const goalTDEE = document.getElementById('goalTDEE');
+  const currentTDEE = document.getElementById('currentTDEE');
+
+  goalBMR.innerText = `Goal BMR: ${Math.floor(weightData[0].goalBMR)} calories`;
+  goalTDEE.innerText = `Goal TDEE: ${Math.floor(weightData[0].goalTDEE)} calories`;
+  currentTDEE.innerText = `Current TDEE: ${Math.floor(weightData[0].currentTDEE)} calories`;
 
   detailsButton.style.display = 'block';
   tableBody.innerHTML = ''; // clear existing entries

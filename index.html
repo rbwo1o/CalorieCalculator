@@ -150,7 +150,7 @@
     </div>
 
 
-    <div class="container">
+    <div class="container mb-3">
         <div class="row">
             <div class="col">
                 <div>
@@ -162,33 +162,47 @@
             <div class="col">
                 <button class="btn btn-primary mt-3 w-100" id="detailsButton" type="button" data-bs-toggle="collapse" data-bs-target="#dataTable" aria-expanded="false" aria-controls="dataTable" style="display: none;">View Details <i class="fa-solid fa-caret-down"></i></button>
                 <div class="collapse mt-3" id="dataTable">
-                        <table class="table table-primary table-striped">
-                            <thead class="text-center">
-                                <tr>
-                                    <th scope="col" >Week</th>
-                                    <th scope="col" >Weight</th>
-                                    <th scope="col" >Recommended Calories</th>
-                                </tr>
-                            </thead>
-                            <tbody id="dataTableBody" class="text-center">
-                                <!-- Data rows will be inserted here -->
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td class="table-active">Larry the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td class="table-active">Larry the Bird</td>
-                                    <td>@twitter</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">3</th>
-                                    <td class="table-active">Larry the Bird</td>
-                                    <td>@twitter</td>
-                                  </tr>
-                            </tbody>
-                        </table>
+                    <div class="row text-white text-center">
+                        <div class="col-12">
+                            <p>
+                                The Calorie Calculator is designed to help you achieve your weight goals by estimating the calories needed to lose or gain up to 2 pounds per week—the maximum amount generally recommended for safe and sustainable progress. Keep in mind that these numbers are approximate, as each individual's body and metabolism are unique. The calculator provides personalized guidance, but actual results may vary based on various factors, including lifestyle, genetics, and overall health.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row text-white text-center">
+                        <div class="col-12">
+                            <ul class="w-75 m-auto">
+                                <li>
+                                    <span class="lead">Basal Metabolic Rate (BMR)</span> is the number of calories your body needs to maintain basic physiological functions, like breathing and circulation, while at rest. It's the baseline amount of energy your body requires to function each day.
+                                </li>
+                                <li class="my-3">
+                                    Total Daily Energy Expenditure (TDEE) is the total number of calories your body needs each day, accounting for your Basal Metabolic Rate (BMR) plus the calories burned through physical activity and digestion. It represents the energy required to maintain your current weight with your level of daily activity.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row text-center text-white my-2">
+                        <div class="col-md-4">
+                            <h6 id="goalBMR"></h3>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 id="goalTDEE"></h3>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 id="currentTDEE"></h3>
+                        </div>
+                    </div>
+                    <table class="table table-primary table-striped">
+                        <thead class="text-center">
+                            <tr>
+                                <th scope="col">Week</th>
+                                <th scope="col">Weight</th>
+                                <th scope="col">Recommended Calories</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dataTableBody" class="text-center">
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
